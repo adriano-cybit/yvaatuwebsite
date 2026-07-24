@@ -4,168 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TweakHub - Unsere Pakete</title>
-    <!-- Tailwind CSS (via CDN) -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-950 text-white min-h-screen font-sans selection:bg-[#5865F2] selection:text-white flex flex-col">
+<body class="bg-black text-white min-h-screen flex flex-col justify-between">
 
-    <!-- Navigation -->
-    <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <!-- Logo -->
-                <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-80 transition">
-                    <span class="text-2xl font-black tracking-tighter">TWEAK<span class="text-[#5865F2]">HUB</span></span>
-                </a>
-                <!-- Links -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-300 hover:text-white transition text-sm font-medium">Zurück zur Startseite</a>
-                </div>
-            </div>
+    <!-- Navigation / Header -->
+    <header class="p-6 flex justify-between items-center max-w-7xl mx-auto w-full">
+        <div id="tweakhub" class="text-xl font-black tracking-wider text-white">TWEAKHUB</div>
+        <a href="index.html" class="text-gray-400 hover:text-white transition text-sm font-medium">Zurück zur Startseite</a>
+    </header>
+
+    <!-- Hauptinhalt: Pakete -->
+    <main class="max-w-7xl mx-auto px-6 py-12 w-full">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl lg:text-5xl font-black tracking-tight mb-4">Wähle dein Paket</h1>
+            <p class="text-gray-400 max-w-xl mx-auto">Optimiere dein System für maximale Leistung und minimale Latenzen.</p>
         </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main class="flex-grow pt-32 pb-20 sm:pt-40 relative overflow-hidden">
-        
-        <!-- Hintergrund-Glow -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#5865F2] rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Wähle dein Setup</h1>
-                <p class="text-lg text-gray-400">Vom perfekten Einstieg bis zur kompromisslosen E-Sport-Optimierung. Finde das Paket, das zu dir passt.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            
+            <!-- Box 1: Basic -->
+            <div class="bg-gray-900/50 border border-white/10 p-8 rounded-3xl backdrop-blur-sm flex flex-col h-full transition-all duration-300 hover:bg-gray-900/80 hover:border-2 hover:border-[#5865F2] hover:shadow-[0_0_30px_rgba(88,101,242,0.2)] hover:lg:-translate-y-4">
+                <h3 class="text-2xl font-bold text-gray-200">BASIC PAKET</h3>
+                <div class="mt-4 mb-6 flex items-baseline text-4xl font-extrabold">
+                    5,00 €
+                </div>
+                <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                    Der perfekte Einstieg für ein sauberes und reaktionsschnelleres System.
+                </p>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-start">
+                        <span class="text-[#5865F2] mr-3 mt-1">✔</span>
+                        <div>
+                            <strong class="block text-gray-200 text-sm">Deep System Debloat</strong>
+                            <span class="text-gray-500 text-xs">Komplette Bereinigung von unnötigen Windows-Apps, Spionage-Hintergrundaufgaben und altem System-Cache.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#5865F2] mr-3 mt-1">✔</span>
+                        <div>
+                            <strong class="block text-gray-200 text-sm">MSI Utility v3 Setup</strong>
+                            <span class="text-gray-500 text-xs">Optimierung der Interrupt-Prioritäten (Message Signaled Interrupts) für deine Grafikkarte und USB-Ports, um den Input-Lag spürbar zu senken.</span>
+                        </div>
+                    </li>
+                </ul>
+                <button class="w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-3 rounded-xl transition">Auswählen</button>
             </div>
 
-            <!-- Pricing Grid (3 Boxen) -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <!-- Box 2: Advanced -->
+            <div class="bg-gray-900/50 border border-white/10 p-8 rounded-3xl backdrop-blur-sm flex flex-col h-full transition-all duration-300 hover:bg-gray-900/80 hover:border-2 hover:border-[#5865F2] hover:shadow-[0_0_30px_rgba(88,101,242,0.2)] hover:lg:-translate-y-4">
+                <h3 class="text-2xl font-bold text-gray-200">ADVANCED PAKET</h3>
+                <div class="mt-4 mb-6 flex items-baseline text-4xl font-extrabold">
+                    15,00 €
+                </div>
+                <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                    Der Sweet-Spot. Eine saubere Basis für drastisch bessere Performance und stabile Frametimes.
+                </p>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-start">
+                        <span class="text-[#5865F2] mr-3 mt-1">✔</span>
+                        <div>
+                            <strong class="block text-gray-200 text-sm">Custom Windows</strong>
+                            <span class="text-gray-500 text-xs">Installation und Einrichtung einer schlanken, auf Gaming optimierten Windows-Version (z.B. AtlasOS / ReviOS), die von Werk aus keinen Ballast mitbringt.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#5865F2] mr-3 mt-1">✔</span>
+                        <div>
+                            <strong class="block text-gray-200 text-sm">Service Debloat</strong>
+                            <span class="text-gray-500 text-xs">Knallhartes Abschalten aller unnötigen Windows-Dienste im Hintergrund, die CPU und RAM fressen.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#5865F2] mr-3 mt-1">✔</span>
+                        <div>
+                            <strong class="block text-gray-200 text-sm">MSI Utility v3 Setup</strong>
+                            <span class="text-gray-500 text-xs">Perfekte Zuweisung der Hardware-Interrupts für 0 Delay.</span>
+                        </div>
+                    </li>
+                </ul>
+                <button class="w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-3 rounded-xl transition">Auswählen</button>
+            </div>
+
+            <!-- Box 3: Ultimate -->
+            <div class="relative bg-gray-900/50 border border-white/10 p-8 rounded-3xl backdrop-blur-sm flex flex-col h-full transition-all duration-300 hover:bg-gray-900/80 hover:border-2 hover:border-[#5865F2] hover:shadow-[0_0_30px_rgba(88,101,242,0.2)] hover:lg:-translate-y-4">
+                <!-- Badge -->
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#5865F2] text-white px-4 py-1 rounded-full text-xs font-bold tracking-wide">
+                    AM BELIEBTESTEN
+                </div>
                 
-                <!-- Box 1: Basic -->
-                <div class="bg-gray-900/50 border border-white/10 p-8 rounded-3xl backdrop-blur-sm flex flex-col h-full hover:border-gray-600 transition-colors">
-                    <h3 class="text-2xl font-bold text-gray-200">BASIC PAKET</h3>
-                    <div class="mt-4 mb-6 flex items-baseline text-4xl font-extrabold">
-                        5,00 €
-                    </div>
-                    <p class="text-gray-400 text-sm mb-8 leading-relaxed">
-                        Der perfekte Einstieg für ein sauberes und reaktionsschnelleres System.
-                    </p>
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start">
-                            <span class="text-[#5865F2] mr-3 mt-1">✔</span>
-                            <div>
-                                <strong class="block text-gray-200 text-sm">Deep System Debloat</strong>
-                                <span class="text-gray-500 text-xs">Komplette Bereinigung von unnötigen Windows-Apps, Spionage-Hintergrundaufgaben und altem System-Cache.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#5865F2] mr-3 mt-1">✔</span>
-                            <div>
-                                <strong class="block text-gray-200 text-sm">MSI Utility v3 Setup</strong>
-                                <span class="text-gray-500 text-xs">Optimierung der Interrupt-Prioritäten (Message Signaled Interrupts) für deine Grafikkarte und USB-Ports, um den Input-Lag spürbar zu senken.</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <button class="w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-3 rounded-xl transition">Auswählen</button>
+                <h3 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#5865F2] to-purple-400">YVAATU ULTIMATE PAKET</h3>
+                <div class="mt-4 mb-6 flex items-baseline text-4xl font-extrabold">
+                    25,00 €
                 </div>
-
-                <!-- Box 2: Advanced -->
-                <div class="bg-gray-900/50 border border-white/10 p-8 rounded-3xl backdrop-blur-sm flex flex-col h-full hover:border-gray-600 transition-colors">
-                    <h3 class="text-2xl font-bold text-gray-200">ADVANCED PAKET</h3>
-                    <div class="mt-4 mb-6 flex items-baseline text-4xl font-extrabold">
-                        15,00 €
-                    </div>
-                    <p class="text-gray-400 text-sm mb-8 leading-relaxed">
-                        Der Sweet-Spot. Eine saubere Basis für drastisch bessere Performance und stabile Frametimes.
-                    </p>
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start">
-                            <span class="text-[#5865F2] mr-3 mt-1">✔</span>
-                            <div>
-                                <strong class="block text-gray-200 text-sm">Custom Windows</strong>
-                                <span class="text-gray-500 text-xs">Installation und Einrichtung einer schlanken, auf Gaming optimierten Windows-Version (z.B. AtlasOS / ReviOS), die von Werk aus keinen Ballast mitbringt.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#5865F2] mr-3 mt-1">✔</span>
-                            <div>
-                                <strong class="block text-gray-200 text-sm">Service Debloat</strong>
-                                <span class="text-gray-500 text-xs">Knallhartes Abschalten aller unnötigen Windows-Dienste im Hintergrund, die CPU und RAM fressen.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#5865F2] mr-3 mt-1">✔</span>
-                            <div>
-                                <strong class="block text-gray-200 text-sm">MSI Utility v3 Setup</strong>
-                                <span class="text-gray-500 text-xs">Perfekte Zuweisung der Hardware-Interrupts für 0 Delay.</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <button class="w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-3 rounded-xl transition">Auswählen</button>
-                </div>
-
-                <!-- Box 3: Ultimate (Hervorgehoben) -->
-                <div class="bg-gray-900/80 border-2 border-[#5865F2] shadow-[0_0_30px_rgba(88,101,242,0.2)] p-8 rounded-3xl backdrop-blur-sm flex flex-col h-full transform lg:-translate-y-4">
-                    <!-- Badge -->
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#5865F2] text-white px-4 py-1 rounded-full text-xs font-bold tracking-wide">
-                        AM BELIEBTESTEN
-                    </div>
-                    
-                    <h3 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#5865F2] to-purple-400">YVAATU ULTIMATE PAKET</h3>
-                    <div class="mt-4 mb-6 flex items-baseline text-4xl font-extrabold">
-                        25,00 €
-                    </div>
-                    <p class="text-gray-300 text-sm mb-8 leading-relaxed font-medium">
-                        Das "Yvaatu" Paket. Kompromisslose E-Sport-Optimierung auf Kernel-Ebene. Nichts wird dem Zufall überlassen.
-                    </p>
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start">
-                            <span class="text-[#5865F2] mr-3 mt-1">★</span>
-                            <div>
-                                <strong class="block text-gray-200 text-sm">Custom Windows</strong>
-                                <span class="text-gray-400 text-xs">Frisches, maximal optimiertes Gaming-Betriebssystem.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#5865F2] mr-3 mt-1">★</span>
-                            <div>
-                                <strong class="block text-gray-200 text-sm">Deep App & System Debloat</strong>
-                                <span class="text-gray-400 text-xs">Restlose Vernichtung von Telemetrie und Müll.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#5865F2] mr-3 mt-1">★</span>
-                            <div>
-                                <strong class="block text-gray-200 text-sm">Service Debloat</strong>
-                                <span class="text-gray-400 text-xs">Manuelle Deaktivierung aller bremsenden Hintergrunddienste.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#5865F2] mr-3 mt-1">★</span>
-                            <div>
-                                <strong class="block text-gray-200 text-sm">BIOS Tweaks</strong>
-                                <span class="text-gray-400 text-xs">Tiefe Anpassungen im Mainboard (RAM-Timings, C-States, CPU-Power-Limits) für maximale Hardware-Auslastung.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#5865F2] mr-3 mt-1">★</span>
-                            <div>
-                                <strong class="block text-gray-200 text-sm">Yvaatu Registry Tweaks</strong>
-                                <span class="text-gray-400 text-xs">Unsere exklusiven Code-Injektionen für Win32-Priority, USB-Polling (8kHz Fix), GPU-Scheduling und Network-Throttling uvm.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#5865F2] mr-3 mt-1">★</span>
-                            <div>
-                                <strong class="block text-gray-200 text-sm">MSI Utility v3 Setup</strong>
-                                <span class="text-gray-400 text-xs">Feintuning der Hardware-Ressourcen.</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <button class="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg shadow-[#5865F2]/30">Jetzt optimieren lassen</button>
-                </div>
-
+                <p class="text-gray-300 text-sm mb-8 leading-relaxed font-medium">
+                    Das "Yvaatu" Paket. Kompromisslose E-Sport-Optimierung auf Kernel-Ebene. Nichts wird dem Zufall überlassen.
+                </p>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-start">
+                        <span class="text-[#5865F2] mr-3 mt-1">★</span>
+                        <div>
+                            <strong class="block text-gray-200 text-sm">Custom Windows</strong>
+                            <span class="text-gray-400 text-xs">Frisches, maximal optimiertes Gaming-Betriebssystem.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#5865F2] mr-3 mt-1">★</span>
+                        <div>
+                            <strong class="block text-gray-200 text-sm">Deep App & System Debloat</strong>
+                            <span class="text-gray-400 text-xs">Restlose Vernichtung von Telemetrie und Müll.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#5865F2] mr-3 mt-1">★</span>
+                        <div>
+                            <strong class="block text-gray-200 text-sm">Service Debloat</strong>
+                            <span class="text-gray-400 text-xs">Manuelle Deaktivierung aller bremsenden Hintergrunddienste.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#5865F2] mr-3 mt-1">★</span>
+                        <div>
+                            <strong class="block text-gray-200 text-sm">BIOS Tweaks</strong>
+                            <span class="text-gray-400 text-xs">Tiefe Anpassungen im Mainboard (RAM-Timings, C-States, CPU-Power-Limits) für maximale Hardware-Auslastung.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#5865F2] mr-3 mt-1">★</span>
+                        <div>
+                            <strong class="block text-gray-200 text-sm">Yvaatu Registry Tweaks</strong>
+                            <span class="text-gray-400 text-xs">Unsere exklusiven Code-Injektionen für Win32-Priority, USB-Polling (8kHz Fix), GPU-Scheduling und Network-Throttling uvm.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[#5865F2] mr-3 mt-1">★</span>
+                        <div>
+                            <strong class="block text-gray-200 text-sm">MSI Utility v3 Setup</strong>
+                            <span class="text-gray-400 text-xs">Feintuning der Hardware-Ressourcen.</span>
+                        </div>
+                    </li>
+                </ul>
+                <button class="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg shadow-[#5865F2]/30">Jetzt optimieren lassen</button>
             </div>
+
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-600 text-xs">
+        &copy; 2026 TweakHub. Alle Rechte vorbehalten.
+    </footer>
+
 </body>
 </html>

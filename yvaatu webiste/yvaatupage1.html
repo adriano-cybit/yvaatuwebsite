@@ -92,7 +92,13 @@
         }
 
         function loginWithDiscord() {
+            // Speichert den Login im Browser
             sessionStorage.setItem('discordLoggedIn', 'true');
+            
+            // Öffnet deinen Discord-Einladungslink in einem neuen Tab
+            window.open('https://discord.gg/Gnu65y3Bj8', '_blank');
+            
+            // Lädt die Seite kurz neu, damit die Box verschwindet und alles freigeschaltet ist
             location.reload();
         }
 
@@ -108,6 +114,5 @@
             document.getElementById('popup-modal').classList.add('hidden');
         }
     </script>
-
 </body>
 </html>

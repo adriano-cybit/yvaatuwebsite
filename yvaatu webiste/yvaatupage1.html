@@ -19,13 +19,13 @@
     <!-- Hauptinhalt -->
     <main class="max-w-4xl mx-auto px-6 py-12 w-full flex-1 flex flex-col justify-center items-center">
         
-        <div class="text-center mb-12">
+        <div class="text-center mb-10">
             <h1 class="text-4xl lg:text-5xl font-black tracking-tight mb-4">Willkommen bei TweakHub</h1>
-            <p class="text-gray-400 max-w-lg mx-auto">Wähle einen Bereich aus. Für Pakete und Features ist eine einmalige Discord-Verifizierung erforderlich.</p>
+            <p class="text-gray-400 max-w-lg mx-auto">Wähle einen Bereich aus. Für Pakete & Features ist eine einmalige Discord-Verifizierung erforderlich.</p>
         </div>
 
         <!-- DISCORD LOGIN BOX (Wird ausgeblendet, wenn eingeloggt) -->
-        <div id="login-box" class="w-full bg-gray-950/80 border border-white/10 p-8 rounded-3xl backdrop-blur-sm text-center shadow-2xl mb-10 transition-all duration-300 hover:border-[#5865F2]">
+        <div id="login-box" class="w-full bg-gray-950/80 border border-white/10 p-8 rounded-3xl backdrop-blur-sm text-center shadow-2xl mb-8 transition-all duration-300 hover:border-[#5865F2]">
             <h2 class="text-2xl font-bold mb-2">Discord Verifizierung</h2>
             <p class="text-gray-400 text-sm mb-6">Bitte verbinde dich einmalig mit Discord, um geschützte Bereiche freizuschalten.</p>
             
@@ -36,24 +36,18 @@
             </button>
         </div>
 
-        <!-- Erfolgs-Hinweis (Wird angezeigt, wenn eingeloggt) -->
-        <div id="success-box" class="hidden w-full bg-emerald-950/40 border border-emerald-500/30 p-4 rounded-2xl text-center mb-10 text-emerald-400 text-sm font-medium">
+        <!-- Erfolgs-Hinweis -->
+        <div id="success-box" class="hidden w-full bg-emerald-950/40 border border-emerald-500/30 p-4 rounded-2xl text-center mb-8 text-emerald-400 text-sm font-medium">
             ✅ Erfolgreich mit Discord verifiziert! Du hast vollen Zugriff auf alle Bereiche.
         </div>
 
-        <!-- NAVIGATION GRID (Die 4 Buttons) -->
+        <!-- NAVIGATION GRID -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl">
             
-            <!-- Paket-Seite (Geschützt) -->
-            <button onclick="checkAccess('yvaatupage2.html')" class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl text-left transition-all duration-300 hover:bg-gray-900/80 hover:border-[#5865F2] hover:shadow-[0_0_20px_rgba(88,101,242,0.15)] cursor-pointer group">
-                <h3 class="text-xl font-bold text-gray-200 group-hover:text-white">Pakete &rarr;</h3>
-                <p class="text-gray-400 text-xs mt-1">Wähle zwischen Basic, Advanced und Ultimate.</p>
-            </button>
-
-            <!-- Feature-Seite (Geschützt) -->
-            <button onclick="checkAccess('yvaatupage3.html')" class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl text-left transition-all duration-300 hover:bg-gray-900/80 hover:border-[#5865F2] hover:shadow-[0_0_20px_rgba(88,101,242,0.15)] cursor-pointer group">
-                <h3 class="text-xl font-bold text-gray-200 group-hover:text-white">Features &rarr;</h3>
-                <p class="text-gray-400 text-xs mt-1">Erfahre mehr über unsere Optimierungen.</p>
+            <!-- GEMEINSAME BOX: Pakete & Features (Geschützt) -->
+            <button onclick="checkAccess('yvaatupage2.html')" class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl text-left transition-all duration-300 hover:bg-gray-900/80 hover:border-[#5865F2] hover:shadow-[0_0_20px_rgba(88,101,242,0.15)] cursor-pointer group sm:col-span-2">
+                <h3 class="text-xl font-bold text-gray-200 group-hover:text-white">Pakete & Features &rarr;</h3>
+                <p class="text-gray-400 text-xs mt-1">Wähle dein Leistungs-Paket und entdecke alle Optimierungen (Discord-Verifizierung nötig).</p>
             </button>
 
             <!-- FAQ (Frei für alle) -->
@@ -62,8 +56,8 @@
                 <p class="text-gray-400 text-xs mt-1">Wichtige Infos und Server-Regeln.</p>
             </a>
 
-            <!-- Benchmark (Frei für alle) -->
-            <a href="yvaatupage5.html" class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl text-left transition-all duration-300 hover:bg-gray-900/80 hover:border-gray-500 cursor-pointer group">
+            <!-- Benchmark (Frei für alle) - HIER DARAUF ACHTEN, WIE DEINE DATEI HEISST! -->
+            <a href="yvaatupage3.html" class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl text-left transition-all duration-300 hover:bg-gray-900/80 hover:border-gray-500 cursor-pointer group">
                 <h3 class="text-xl font-bold text-gray-200 group-hover:text-white">Benchmark &rarr;</h3>
                 <p class="text-gray-400 text-xs mt-1">Sieh dir unsere Leistungstests an.</p>
             </a>
@@ -72,13 +66,13 @@
 
     </main>
 
-    <!-- POP-UP MELDUNG (Wird eingeblendet, wenn nicht verifiziert) -->
+    <!-- POP-UP MELDUNG -->
     <div id="popup-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center hidden z-50">
         <div class="bg-gray-900 border border-white/10 p-8 rounded-3xl max-w-sm w-full text-center shadow-2xl">
             <div class="text-red-400 text-4xl mb-3">⚠️</div>
-            <h3 class="text-xl font-bold mb-2">Zugriff verweigert</h3>
-            <p class="text-gray-400 text-sm mb-6">Bitte verifiziere dich zuerst mit Discord, um diesen Bereich zu betreten!</p>
-            <button onclick="closeModal()" class="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-3 rounded-xl transition">
+            <h3 class="text-xl font-bold mb-2">Verify with Discord first</h3>
+            <p class="text-gray-400 text-sm mb-6">Bitte verifiziere dich zuerst mit Discord, um auf Pakete & Features zuzugreifen!</p>
+            <button onclick="closeModal()" class="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-3 rounded-xl transition cursor-pointer">
                 Verstanden
             </button>
         </div>
@@ -90,7 +84,6 @@
     </footer>
 
     <script>
-        // Prüfen beim Laden der Seite, ob der User bereits eingeloggt ist
         window.onload = function() {
             if (sessionStorage.getItem('discordLoggedIn') === 'true') {
                 document.getElementById('login-box').style.display = 'none';
@@ -98,25 +91,19 @@
             }
         }
 
-        // Funktion für den Klick auf "Continue with Discord"
         function loginWithDiscord() {
             sessionStorage.setItem('discordLoggedIn', 'true');
-            // Seite kurz neu laden, damit die Ansicht umschaltet
             location.reload();
         }
 
-        // Funktion prüft bei geschützten Buttons (Pakete/Features), ob Login da ist
         function checkAccess(targetPage) {
             if (sessionStorage.getItem('discordLoggedIn') === 'true') {
-                // Wenn eingeloggt -> Weiterleiten zur Zielseite
                 window.location.href = targetPage;
             } else {
-                // Wenn NICHT eingeloggt -> Pop-up anzeigen
                 document.getElementById('popup-modal').classList.remove('hidden');
             }
         }
 
-        // Pop-up wieder schließen
         function closeModal() {
             document.getElementById('popup-modal').classList.add('hidden');
         }

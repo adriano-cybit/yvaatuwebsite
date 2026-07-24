@@ -3,81 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yvaatu - FAQ & Nutzungsbedingungen</title>
+    <title>TweakHub - FAQ & Regeln</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-950 text-white min-h-screen font-sans selection:bg-[#5865F2] selection:text-white flex flex-col">
+<body class="bg-slate-950 text-white min-h-screen flex flex-col justify-between">
 
-    <!-- Navigation -->
-    <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-80 transition">
-                    <span class="text-2xl font-black tracking-tighter">YVAA<span class="text-[#5865F2]">TU</span></span>
-                </a>
-                <div class="flex items-center space-x-6 text-sm font-medium">
-                    <a href="index.html" class="text-gray-300 hover:text-white transition">Startseite</a>
-                    <a href="yvaatupage2.html" class="text-gray-300 hover:text-white transition">Pakete</a>
-                </div>
-            </div>
+    <!-- Navigation / Header -->
+    <header class="p-6 flex justify-between items-center max-w-7xl mx-auto w-full">
+        <div id="tweakhub" class="text-xl font-black tracking-wider text-white">TWEAKHUB</div>
+        <a href="index.html" class="text-gray-400 hover:text-white transition text-sm font-medium">Zurück zur Startseite</a>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <main class="max-w-4xl mx-auto px-6 py-12 w-full flex-1">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl lg:text-5xl font-black tracking-tight mb-4">FAQ & Regeln</h1>
+            <p class="text-gray-400 max-w-xl mx-auto">Wichtige Informationen und Server-Regeln für die Yvaatu Community.</p>
         </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main class="flex-grow pt-32 pb-20 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- NEUE BOX: YVAATU TWEAKS - REGELN -->
+        <div class="bg-gray-900/50 border border-white/10 p-8 lg:p-10 rounded-3xl backdrop-blur-sm transition-all duration-300 hover:bg-gray-900/80 hover:border-2 hover:border-[#5865F2] hover:shadow-[0_0_30px_rgba(88,101,242,0.2)] space-y-6">
             
-            <!-- FAQ Header -->
-            <div class="text-center mb-16">
-                <h1 class="text-4xl font-extrabold tracking-tight mb-4">Häufige Fragen & Richtlinien</h1>
-                <p class="text-gray-400">Hier findest du alle wichtigen Infos zu unseren Optimierungen und Dienstleistungen.</p>
+            <div class="border-b border-white/10 pb-4">
+                <span class="text-xs font-bold text-[#5865F2] tracking-widest uppercase">Community & Sicherheit</span>
+                <h2 class="text-2xl lg:text-3xl font-black text-gray-100 mt-1">YVAATU TWEAKS - REGELN</h2>
+                <p class="text-gray-400 text-sm mt-2">
+                    Willkommen auf dem offiziellen Yvaatu Discord! Damit hier alles professionell und reibungslos abläuft, gelten folgende Regeln. Wer sich auf diesem Server aufhält, akzeptiert diese Bedingungen automatisch.
+                </p>
             </div>
 
-            <!-- FAQ Section -->
-            <div class="space-y-6 mb-20">
-                <h2 class="text-2xl font-bold text-[#5865F2] mb-6 flex items-center">
-                    <span class="mr-3">❓</span> Häufig gestellte Fragen (FAQ)
-                </h2>
-
-                <div class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl">
-                    <h3 class="text-lg font-bold mb-2">Ist eine Optimierung für meinen PC gefahrlos?</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Ja. Alle Einstellungen und Registry-Tweaks werden vorab gründlich getestet. Zudem wird vor jeder Anpassung ein Systemwiederherstellungspunkt erstellt.
-                    </p>
-                </div>
-
-                <div class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl">
-                    <h3 class="text-lg font-bold mb-2">Wie lange dauert eine Optimierung?</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Je nach gewähltem Paket dauert die Optimierung zwischen 20 und 60 Minuten. Die Einrichtung erfolgt Schritt für Schritt gemeinsam über Discord.
-                    </p>
-                </div>
-
-                <div class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl">
-                    <h3 class="text-lg font-bold mb-2">Welche Zahlungsmethoden werden akzeptiert?</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Zahlungen werden direkt im Support-Ticket auf unserem Discord-Server besprochen und abgewickelt.
-                    </p>
-                </div>
+            <!-- Regel 1 -->
+            <div>
+                <h3 class="text-lg font-bold text-gray-200 flex items-center">
+                    <span class="text-[#5865F2] mr-2">▪</span> Respektvoller Umgang
+                </h3>
+                <p class="text-gray-400 text-sm mt-1 pl-5">
+                    Behandelt euch mit Respekt. Beleidigungen, Rassismus, toxisches Verhalten oder Drama werden hier nicht toleriert. Wir sind hier, um Performance zu maximieren, nicht um zu streiten.
+                </p>
             </div>
 
-            <hr class="border-white/10 mb-20">
+            <!-- Regel 2 -->
+            <div>
+                <h3 class="text-lg font-bold text-gray-200 flex items-center">
+                    <span class="text-[#5865F2] mr-2">▪</span> Keine Leaks & Kein Weiterverkauf (WICHTIG)
+                </h3>
+                <p class="text-gray-400 text-sm mt-1 pl-5">
+                    Die Yvaatu Pro-Tweaks sind exklusiv für Käufer. Wer erwischt wird, wie er bezahlte Skripte, Registry-Dateien oder Anleitungen an andere weitergibt, leakt oder weiterverkauft, wird sofort und ohne Vorwarnung gebannt.
+                </p>
+            </div>
 
-            <!-- TOS Section -->
-            <div class="space-y-6">
-                <h2 class="text-2xl font-bold text-[#5865F2] mb-6 flex items-center">
-                    <span class="mr-3">📜</span> Nutzungsbedingungen (Terms of Service)
-                </h2>
+            <!-- Regel 3 -->
+            <div>
+                <h3 class="text-lg font-bold text-gray-200 flex items-center">
+                    <span class="text-[#5865F2] mr-2">▪</span> Refund-Policy (Keine Rückerstattungen)
+                </h3>
+                <p class="text-gray-400 text-sm mt-1 pl-5">
+                    Da es sich bei den Tweaks und Skripten um digitale Güter handelt, die nach dem Download nicht "zurückgegeben" werden können, sind Rückerstattungen (Refunds) strikt ausgeschlossen. Wer versucht, Gelder ungerechtfertigt über PayPal zurückzuziehen (Chargeback), wird permanent gebannt und der Fall wird mit entsprechenden Beweisen an PayPal gemeldet und wird mit einer Anzeige wegen Betrugs geahndet.
+                </p>
+            </div>
 
-                <div class="bg-gray-900/30 border border-white/5 p-6 rounded-2xl text-sm text-gray-400 space-y-4 leading-relaxed">
-                    <p><strong>1. Dienstleistung:</strong> Yvaatu bietet digitale Optimierungsdienste für Windows-Betriebssysteme an. Mit dem Kauf eines Pakets akzeptierst du diese Bedingungen.</p>
-                    <p><strong>2. Haftungsausschluss:</strong> Wir haften nicht für Schäden, die durch unsachgemäße nachträgliche Veränderungen am System durch den Nutzer entstehen.</p>
-                    <p><strong>3. Rückerstattungen:</strong> Da es sich um eine Dienstleistung handelt, ist eine Rückerstattung nach Beginn der Optimierungsarbeiten ausgeschlossen.</p>
-                </div>
+            <!-- Regel 4 -->
+            <div>
+                <h3 class="text-lg font-bold text-gray-200 flex items-center">
+                    <span class="text-[#5865F2] mr-2">▪</span> Support & Tickets
+                </h3>
+                <p class="text-gray-400 text-sm mt-1 pl-5">
+                    Bitte spammt das Team oder mich nicht per Privatnachricht (DM) voll.<br><br>
+                    <strong>Kaufinteresse?</strong> Öffne ein Ticket im "Buy Here" Kanal.<br>
+                    <strong>Probleme nach dem Kauf?</strong> Öffne ein Ticket im Support-Kanal.<br>
+                    Dort kann dir strukturiert und schnell geholfen werden.
+                </p>
+            </div>
+
+            <!-- Regel 5 -->
+            <div>
+                <h3 class="text-lg font-bold text-gray-200 flex items-center">
+                    <span class="text-[#5865F2] mr-2">▪</span> Eigenverantwortung (Disclaimer)
+                </h3>
+                <p class="text-gray-400 text-sm mt-1 pl-5">
+                    Alle Yvaatu Tweaks und Skripte wurden ausgiebig getestet, um die sicherste und beste Performance (FPS & Latenz) zu liefern. Dennoch gilt: Die Anwendung erfolgt auf eigene Gefahr. Wir übernehmen keine rechtliche Haftung für eventuelle Windows-Probleme, zerschossene Systeme oder gebannte Spiele-Accounts. Lest euch vor der Ausführung immer die beiliegende Readme durch!
+                </p>
+            </div>
+
+            <!-- Regel 6 -->
+            <div>
+                <h3 class="text-lg font-bold text-gray-200 flex items-center">
+                    <span class="text-[#5865F2] mr-2">▪</span> Keine Fremdwerbung
+                </h3>
+                <p class="text-gray-400 text-sm mt-1 pl-5">
+                    Eigenwerbung für andere Server, fremde Tweak-Packs, YouTube-Kanäle oder das Posten von Links ohne Erlaubnis ist untersagt.
+                </p>
+            </div>
+
+            <div class="border-t border-white/10 pt-4 text-center">
+                <p class="text-gray-300 font-medium text-sm">
+                    Verstanden? Dann viel umgucken und genießt 0 Delay ⚡
+                </p>
             </div>
 
         </div>
+
     </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-600 text-xs">
+        &copy; 2026 TweakHub. Alle Rechte vorbehalten.
+    </footer>
 
 </body>
 </html>

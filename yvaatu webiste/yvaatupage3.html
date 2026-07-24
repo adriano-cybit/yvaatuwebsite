@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yvaatu - Benchmarks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white min-h-screen font-sans selection:bg-[#5865F2] selection:text-white flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="border-b border-white/5 bg-black/20 backdrop-blur-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="yvaatu.html" class="flex-shrink-0 flex items-center hover:opacity-80 transition">
+                    <span class="text-2xl font-black tracking-tighter">YVAA<span class="text-[#5865F2]">TU</span></span>
+                </a>
+                <div class="flex items-center space-x-6 text-sm font-medium">
+                    <a href="yvaatu.html" class="text-gray-300 hover:text-white transition">Startseite</a>
+                    <a href="yvaatupage2.html" class="text-gray-300 hover:text-white transition">Pakete</a>
+                    <a href="yvaatupage4.html" class="text-gray-300 hover:text-white transition">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-20 flex items-center justify-center relative overflow-hidden">
+        <!-- Background Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#5865F2] rounded-full blur-[160px] opacity-15 pointer-events-none"></div>
+
+        <div class="max-w-4xl w-full mx-auto px-4 relative z-10 flex justify-center">
+            <!-- Benchmark Bild Container -->
+            <div class="relative group cursor-pointer">
+                
+                <!-- Hover Glow Effekt hinter dem Bild -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-[#5865F2] to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-60 transition duration-500 group-hover:duration-200"></div>
+
+                <!-- Das Bild mit Pop-up Effekt -->
+                <img 
+                    src="c:\Users\Administrator\Pictures\6CAF8937-40AB-4BF5-A8BF-3C7301D418BF.png" 
+                    alt="Yvaatu Benchmark Task Manager" 
+                    class="relative rounded-2xl border border-white/10 shadow-2xl transition-all duration-300 ease-out transform group-hover:scale-105 group-hover:-translate-y-1 max-w-full h-auto"
+                >
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

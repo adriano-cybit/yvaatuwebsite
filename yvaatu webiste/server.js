@@ -6,19 +6,23 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Erlaube dem Server, deine HTML-Dateien anzuzeigen
+// Globaler Request-Logger: Zeigt JEDEN Aufruf in den Render-Logs an
+app.use((req, res, next) => {
+    console.log(`[REQUEST EINGETROFFEN] Methode: ${req.method} | URL: ${req.url}`);
+    next();
+});
+
 app.use(express.static(path.join(__dirname)));
 
-// 1. Der Login-Link (Fest auf deine Render-URL eingestellt)
 app.get('/auth/discord', (req, res) => {
+    console.log("--> Login-Route aufgerufen");
     const redirectUri = encodeURIComponent('https://yvaatuwebsite.onrender.com/auth/discord/callback');
     const url = `https://discord.com/api/oauth2/authorize?client_id=${process.env.CLIENT_ID}&redirect_uri=${redirectUri}&response_type=code&scope=identify%20guilds`;
     res.redirect(url);
 });
 
-// 2. Der Callback (Jetzt sauber und komplett in der asynchronen Funktion eingeschlossen)
 app.get('/auth/discord/callback', async (req, res) => {
-    console.log("--> CALLBACK ROUTE WURDE AUFGERUFEN!");
+    console.log("--> CALLBACK ROUTE WURDE ERFOLGREICH ERREICHT!");
     
     const code = req.query.code;
     if (!code) return res.send('Kein Code erhalten.');
@@ -60,7 +64,6 @@ app.get('/auth/discord/callback', async (req, res) => {
     }
 });
 
-// Starte den Server
 app.listen(PORT, () => {
-    console.log(`Server läuft auf Port ${PORT}`);
+    console.log(`Server läuft fehlerfrei auf Port ${PORT}`);
 });

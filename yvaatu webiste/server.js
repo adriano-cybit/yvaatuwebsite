@@ -16,14 +16,12 @@ app.get('/auth/discord', (req, res) => {
     res.redirect(url);
 });
 
-// 2. Der Callback (Mit korrigiertem async, damit der Server nicht abstürzt)
+// 2. Der Callback (Jetzt sauber und komplett in der asynchronen Funktion eingeschlossen)
 app.get('/auth/discord/callback', async (req, res) => {
-    console.log("--> CALLBACK ROUTE WURDE AUFGERUFEN!"); // <--- Das hier einfügen
+    console.log("--> CALLBACK ROUTE WURDE AUFGERUFEN!");
     
     const code = req.query.code;
     if (!code) return res.send('Kein Code erhalten.');
-    // ... Rest des Codes
-});
 
     try {
         const currentRedirectUri = 'https://yvaatuwebsite.onrender.com/auth/discord/callback';
@@ -59,7 +57,8 @@ app.get('/auth/discord/callback', async (req, res) => {
     } catch (error) {
         console.error("Fehler beim Discord Login:", error.message);
         res.send('Es gab ein Problem bei der Verifizierung mit Discord.');
-    };
+    }
+});
 
 // Starte den Server
 app.listen(PORT, () => {

@@ -8,30 +8,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="bg-slate-950 text-white min-h-screen flex flex-col justify-between">
 
-    <!-- INTRO SPLASH SCREEN -->
-    <div id="intro-screen" class="fixed inset-0 bg-slate-950 z-50 flex items-center justify-center transition-opacity duration-700 hidden">
-        <div class="text-center transform transition-transform duration-700 scale-100" id="intro-content">
-            <span class="text-xs uppercase tracking-[0.3em] text-[#5865F2] font-bold block mb-2">Welcome</span>
-            <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
-                Created by <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#5865F2] to-purple-400">Astro</span>
-            </h1>
-            <div class="w-12 h-1 bg-[#5865F2] mx-auto mt-4 rounded-full animate-pulse"></div>
-        </div>
-    </div>
+    <!-- Navigation / Header -->
+    <header class="p-6 flex justify-between items-center max-w-7xl mx-auto w-full">
+        <div id="tweakhub" class="text-xl font-black tracking-wider text-white">TWEAKHUB</div>
+        <a href="index.html" class="text-gray-400 hover:text-white transition text-sm font-medium">&larr; Zurück zur Startseite</a>
+    </header>
 
     <!-- Hauptinhalt -->
     <main class="max-w-4xl mx-auto px-6 py-12 w-full flex-1 flex flex-col justify-center items-center">
         
-        <div class="text-center mb-10">
+        <div class="text-center mb-12">
             <h1 class="text-4xl lg:text-5xl font-black tracking-tight mb-4">Willkommen bei TweakHub</h1>
-            <p class="text-gray-400 max-w-lg mx-auto">Wähle einen Bereich aus. Für Pakete & Features ist eine einmalige Discord-Verifizierung erforderlich.</p>
+            <p class="text-gray-400 max-w-lg mx-auto">Wähle einen Bereich aus. Für Pakete und Features ist eine einmalige Discord-Verifizierung erforderlich.</p>
         </div>
 
-        <!-- DISCORD LOGIN BOX -->
-        <div id="login-box" class="w-full bg-gray-950/80 border border-white/10 p-8 rounded-3xl backdrop-blur-sm text-center shadow-2xl mb-8 transition-all duration-300 hover:border-[#5865F2]">
+        <!-- DISCORD LOGIN BOX (Wird ausgeblendet, wenn eingeloggt) -->
+        <div id="login-box" class="w-full bg-gray-950/80 border border-white/10 p-8 rounded-3xl backdrop-blur-sm text-center shadow-2xl mb-10 transition-all duration-300 hover:border-[#5865F2]">
             <h2 class="text-2xl font-bold mb-2">Discord Verifizierung</h2>
             <p class="text-gray-400 text-sm mb-6">Bitte verbinde dich einmalig mit Discord, um geschützte Bereiche freizuschalten.</p>
             
@@ -42,28 +36,34 @@
             </button>
         </div>
 
-        <!-- Erfolgs-Hinweis -->
-        <div id="success-box" class="hidden w-full bg-emerald-950/40 border border-emerald-500/30 p-4 rounded-2xl text-center mb-8 text-emerald-400 text-sm font-medium">
+        <!-- Erfolgs-Hinweis (Wird angezeigt, wenn eingeloggt) -->
+        <div id="success-box" class="hidden w-full bg-emerald-950/40 border border-emerald-500/30 p-4 rounded-2xl text-center mb-10 text-emerald-400 text-sm font-medium">
             ✅ Erfolgreich mit Discord verifiziert! Du hast vollen Zugriff auf alle Bereiche.
         </div>
 
-        <!-- NAVIGATION GRID -->
+        <!-- NAVIGATION GRID (Die 4 Buttons) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl">
             
-            <!-- GEMEINSAME BOX: Pakete & Features -->
-            <button onclick="checkAccess('yvaatupage2.html')" class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl text-left transition-all duration-300 hover:bg-gray-900/80 hover:border-[#5865F2] hover:shadow-[0_0_20px_rgba(88,101,242,0.15)] cursor-pointer group sm:col-span-2">
-                <h3 class="text-xl font-bold text-gray-200 group-hover:text-white">Pakete & Features &rarr;</h3>
-                <p class="text-gray-400 text-xs mt-1">Wähle dein Leistungs-Paket und entdecke alle Optimierungen (Discord-Verifizierung nötig).</p>
+            <!-- Paket-Seite (Geschützt) -->
+            <button onclick="checkAccess('yvaatupage2.html')" class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl text-left transition-all duration-300 hover:bg-gray-900/80 hover:border-[#5865F2] hover:shadow-[0_0_20px_rgba(88,101,242,0.15)] cursor-pointer group">
+                <h3 class="text-xl font-bold text-gray-200 group-hover:text-white">Pakete &rarr;</h3>
+                <p class="text-gray-400 text-xs mt-1">Wähle zwischen Basic, Advanced und Ultimate.</p>
             </button>
 
-            <!-- FAQ -->
+            <!-- Feature-Seite (Geschützt) -->
+            <button onclick="checkAccess('yvaatupage3.html')" class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl text-left transition-all duration-300 hover:bg-gray-900/80 hover:border-[#5865F2] hover:shadow-[0_0_20px_rgba(88,101,242,0.15)] cursor-pointer group">
+                <h3 class="text-xl font-bold text-gray-200 group-hover:text-white">Features &rarr;</h3>
+                <p class="text-gray-400 text-xs mt-1">Erfahre mehr über unsere Optimierungen.</p>
+            </button>
+
+            <!-- FAQ (Frei für alle) -->
             <a href="yvaatupage4.html" class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl text-left transition-all duration-300 hover:bg-gray-900/80 hover:border-gray-500 cursor-pointer group">
                 <h3 class="text-xl font-bold text-gray-200 group-hover:text-white">FAQ & Regeln &rarr;</h3>
                 <p class="text-gray-400 text-xs mt-1">Wichtige Infos und Server-Regeln.</p>
             </a>
 
-            <!-- Benchmark -->
-            <a href="yvaatupage3.html" class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl text-left transition-all duration-300 hover:bg-gray-900/80 hover:border-gray-500 cursor-pointer group">
+            <!-- Benchmark (Frei für alle) -->
+            <a href="yvaatupage5.html" class="bg-gray-900/50 border border-white/10 p-6 rounded-2xl text-left transition-all duration-300 hover:bg-gray-900/80 hover:border-gray-500 cursor-pointer group">
                 <h3 class="text-xl font-bold text-gray-200 group-hover:text-white">Benchmark &rarr;</h3>
                 <p class="text-gray-400 text-xs mt-1">Sieh dir unsere Leistungstests an.</p>
             </a>
@@ -72,82 +72,93 @@
 
     </main>
 
-    <!-- POP-UP MELDUNG -->
+    <!-- POP-UP MELDUNG (Wird eingeblendet, wenn nicht verifiziert) -->
     <div id="popup-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center hidden z-50">
         <div class="bg-gray-900 border border-white/10 p-8 rounded-3xl max-w-sm w-full text-center shadow-2xl">
             <div class="text-red-400 text-4xl mb-3">⚠️</div>
-            <h3 class="text-xl font-bold mb-2">Verify with Discord first</h3>
-            <p class="text-gray-400 text-sm mb-6">Bitte verifiziere dich zuerst mit Discord, um auf Pakete & Features zuzugreifen!</p>
-            <button onclick="closeModal()" class="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-3 rounded-xl transition cursor-pointer">
+            <h3 class="text-xl font-bold mb-2">Zugriff verweigert</h3>
+            <p class="text-gray-400 text-sm mb-6">Bitte verifiziere dich zuerst mit Discord, um diesen Bereich zu betreten!</p>
+            <button onclick="closeModal()" class="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-3 rounded-xl transition">
                 Verstanden
             </button>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="text-center py-8 text-gray-600 text-xs flex flex-col items-center gap-3">
-        <!-- Badge: Created by Astro -->
-        <div class="inline-flex items-center gap-2 bg-gray-900/60 border border-white/5 px-3.5 py-1.5 rounded-full backdrop-blur-sm">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span class="text-[11px] text-gray-400 font-medium">Created by <span class="text-white font-bold">Astro</span></span>
-        </div>
-        
-        <p>&copy; 2026 TweakHub. Alle Rechte vorbehalten.</p>
+    <footer class="text-center py-8 text-gray-600 text-xs">
+        &copy; 2026 TweakHub. Alle Rechte vorbehalten.
     </footer>
 
-    <!-- ALLE SKRIPTE ZUSAMMENGEFASST -->
     <script>
-        window.addEventListener('load', function() {
-            // 1. INTRO EFFEKT LOGIK
-            const intro = document.getElementById('intro-screen');
-            if (!sessionStorage.getItem('introShown')) {
-                intro.classList.remove('hidden');
-                setTimeout(function() {
-                    intro.style.opacity = '0';
-                    setTimeout(function() {
-                        intro.style.display = 'none';
-                        sessionStorage.setItem('introShown', 'true');
-                    }, 700);
-                }, 1500);
-            } else {
-                intro.style.display = 'none';
-            }
-
-            // 2. DISCORD BACKEND LOGIK
-            const urlParams = new URLSearchParams(window.location.search);
-            
-            // Prüft, ob das Backend "verified=true" gesendet hat ODER ob der User schon eingeloggt ist
-            if (urlParams.get('verified') === 'true' || localStorage.getItem('discordLoggedIn') === 'true') {
-                localStorage.setItem('discordLoggedIn', 'true');
+        // Prüfen beim Laden der Seite, ob der User bereits eingeloggt ist
+        window.onload = function() {
+            if (sessionStorage.getItem('discordLoggedIn') === 'true') {
                 document.getElementById('login-box').style.display = 'none';
                 document.getElementById('success-box').classList.remove('hidden');
-                
-                // Löscht das unschöne "?verified=true" oben aus der Suchleiste
-                window.history.replaceState({}, document.title, window.location.pathname);
-                
-            } else if (urlParams.get('error') === 'not_on_server') {
-                alert("Verifizierung fehlgeschlagen: Du bist nicht auf dem Yvaatu Discord Server! Bitte trete erst bei.");
-                window.history.replaceState({}, document.title, window.location.pathname);
             }
-        });
-
-        function loginWithDiscord() {
-            // DAS IST WICHTIG: Er leitet jetzt zu deinem Backend Server weiter!
-            window.location.href = '/auth/discord';
         }
 
+        // Funktion für den Klick auf "Continue with Discord"
+        function loginWithDiscord() {
+            sessionStorage.setItem('discordLoggedIn', 'true');
+            // Seite kurz neu laden, damit die Ansicht umschaltet
+            location.reload();
+        }
+
+        // Funktion prüft bei geschützten Buttons (Pakete/Features), ob Login da ist
         function checkAccess(targetPage) {
-            if (localStorage.getItem('discordLoggedIn') === 'true') {
+            if (sessionStorage.getItem('discordLoggedIn') === 'true') {
+                // Wenn eingeloggt -> Weiterleiten zur Zielseite
                 window.location.href = targetPage;
             } else {
+                // Wenn NICHT eingeloggt -> Pop-up anzeigen
                 document.getElementById('popup-modal').classList.remove('hidden');
             }
         }
 
+        // Pop-up wieder schließen
         function closeModal() {
             document.getElementById('popup-modal').classList.add('hidden');
         }
     </script>
 
+<!-- INTRO SPLASH SCREEN -->
+    <div id="intro-screen" class="fixed inset-0 bg-slate-950 z-50 flex items-center justify-center transition-opacity duration-700 hidden">
+        <div class="text-center transform transition-transform duration-700 scale-100" id="intro-content">
+            <span class="text-xs uppercase tracking-[0.3em] text-[#5865F2] font-bold block mb-2">Welcome</span>
+            <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+                Created by <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#5865F2] to-purple-400">Astro</span>
+            </h1>
+            <div class="w-12 h-1 bg-[#5865F2] mx-auto mt-4 rounded-full animate-pulse"></div>
+        </div>
+    </div>
+
+    <!-- DAS JS FÜR DEN EINMALIGEN EFFEKT -->
+    <script>
+        window.addEventListener('load', function() {
+            const intro = document.getElementById('intro-screen');
+            
+            // Prüfen, ob das Intro in dieser Sitzung schon gezeigt wurde
+            if (!sessionStorage.getItem('introShown')) {
+                // Einblenden, da es noch nicht gezeigt wurde
+                intro.classList.remove('hidden');
+                
+                // Nach 1.5 Sekunden ausblenden
+                setTimeout(function() {
+                    intro.style.opacity = '0';
+                    
+                    setTimeout(function() {
+                        intro.style.display = 'none';
+                        // Speichern, dass es jetzt gezeigt wurde
+                        sessionStorage.setItem('introShown', 'true');
+                    }, 700);
+                }, 1500);
+            } else {
+                // Wenn schon gezeigt, direkt komplett verstecken
+                intro.style.display = 'none';
+            }
+        });
+    </script>
+    
 </body>
 </html>

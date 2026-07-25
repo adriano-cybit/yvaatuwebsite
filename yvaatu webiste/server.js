@@ -22,6 +22,42 @@ app.get('/auth/discord/callback', async (req, res) => {
     if (!code) return res.send('Kein Code erhalten.');
 
     try {
+        const currentRedirectUri = 'https://yvaatuwebsite.onrender.com/auth/discord/callback';
+
+        const params = new URLSearchParams();
+        params.append('client_id', process.env.CLIENT_ID);
+        params.append('client_secret', process.env.CLIENT_SECRET);
+        params.append('grant_type', 'authorization_code');
+        params.append('code', code);
+        params.append('redirect_uri', currentRedirectUri);
+
+        const tokenResponse = await axios.post('https://discord.com/api/oauth2/token', params, {
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+
+        const accessToken = tokenResponse.data.access_token;
+
+        const guildsResponse = await axios.get('https://discord.com/api/users/@me/guilds', {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        });
+
+        const userGuilds = guildsResponse.data;
+        const yvaatuServerId = process.env.DISCORD_SERVER_ID;
+
+        const isMember = userGuilds.some(guild => guild.id === yvaatuServerId);
+
+        if (isMember) {
+            res.redirect('/index.html?verified=true');
+        } else {
+            res.redirect('/index.html?error=not_on_server');
+        }
+
+    } catch (error) {
+        console.error("Fehler beim Discord Login:", error.message);
+        res.send('Es gab ein Problem bei der Verifizierung mit Discord.');
+    }
+});
+    try {
         // Auch hier fest codiert, damit es zu 100% mit Discord übereinstimmt
         const currentRedirectUri = 'https://yvaatuwebsite.onrender.com/auth/discord/callback';
 

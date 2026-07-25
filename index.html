@@ -114,5 +114,32 @@
         }
     </script>
 
+    <!-- INTRO SPLASH SCREEN -->
+    <div id="intro-screen" class="fixed inset-0 bg-slate-950 z-50 flex items-center justify-center transition-opacity duration-700">
+        <div class="text-center transform transition-transform duration-700 scale-100" id="intro-content">
+            <span class="text-xs uppercase tracking-[0.3em] text-[#5865F2] font-bold block mb-2">Welcome</span>
+            <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+                Created by <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#5865F2] to-purple-400">Astro</span>
+            </h1>
+            <div class="w-12 h-1 bg-[#5865F2] mx-auto mt-4 rounded-full animate-pulse"></div>
+        </div>
+    </div>
+
+    <!-- DAS JS FÜR DEN EFFEKT (Ganz unten vor </body> einfügen) -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const intro = document.getElementById('intro-screen');
+                // Lässt das Intro weich verschwinden (Fade-Out)
+                intro.style.opacity = '0';
+                
+                // Entfernt es nach der Animation komplett aus dem Weg, damit man wieder klicken kann
+                setTimeout(function() {
+                    intro.style.display = 'none';
+                }, 700); // Wartet 0.7 Sekunden bis die Transparenz durch ist
+            }, 1500); // Bleibt genau 1.5 Sekunden lang sichtbar
+        });
+    </script>
+
 </body>
 </html>

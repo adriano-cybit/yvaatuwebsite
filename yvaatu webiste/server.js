@@ -27,13 +27,14 @@ app.use(express.static(path.join(__dirname)));
 // Wenn ein Nutzer auf deiner Website auf den Discord-Login klickt, wird diese Route aufgerufen.
 app.get('/auth/discord', (req, res) => {
     console.log("--> Login-Route aufgerufen");
-    
-    // Die exakte Callback-URL, zu der Discord nach erfolgreichem Login zurückleiten soll
-    const redirectUri = encodeURIComponent('https://yvaatuwebsite.onrender.com');
-    
+
+    const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+    const host = req.get('host');
+    const redirectUri = encodeURIComponent(`${protocol}://${host}/auth/discord/callback`);
+
     // Erstellt die offizielle Discord-Login-URL mit deinen Berechtigungen (Identify & Guilds)
     const url = `https://discord.com/api/oauth2/authorize?client_id=${process.env.CLIENT_ID}&redirect_uri=${redirectUri}&response_type=code&scope=identify%20guilds`;
-    
+
     // Leitet den Nutzer direkt zur Discord-Anmeldeseite weiter
     res.redirect(url);
 });
@@ -43,13 +44,15 @@ app.get('/auth/discord', (req, res) => {
 // Hier landet der Nutzer wieder, nachdem er sich bei Discord eingeloggt hat.
 app.get('/auth/discord/callback', async (req, res) => {
     console.log("--> CALLBACK ROUTE WURDE ERFOLGREICH ERREICHT!");
-    
+
     // Holt den temporären "Code" aus der URL, den Discord geschickt hat
     const code = req.query.code;
     if (!code) return res.send('Kein Code erhalten.');
 
     try {
-        const currentRedirectUri = 'https://yvaatuwebsite.onrender.com/auth/discord/callback';
+        const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+        const host = req.get('host');
+        const currentRedirectUri = `${protocol}://${host}/auth/discord/callback`;
 
         // Bereitet die Daten vor, um den temporären Code bei Discord gegen einen offiziellen Access Token einzutauschen
         const params = new URLSearchParams();
@@ -87,11 +90,15 @@ app.get('/auth/discord/callback', async (req, res) => {
 
     } catch (error) {
         // Falls bei der Kommunikation mit Discord etwas schiefgeht, wird der Fehler abgefangen
-        console.error("Fehler beim Discord Login:", error.message);
+        console.error("Fehler beim Discord Login:", error.response?.data || error.message);
         res.send('Es gab ein Problem bei der Verifizierung mit Discord.');
     }
 });
 
+// Fallback für alle anderen GET-Anfragen, damit deine Seite nicht einfach "Not Found" zeigt
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // --- SERVER STARTEN ---
 // Startet den Webserver und wartet auf eingehende Aufrufe auf dem festgelegten Port

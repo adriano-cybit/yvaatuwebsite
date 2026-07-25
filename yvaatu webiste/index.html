@@ -113,7 +113,7 @@
     </script>
 
 <!-- INTRO SPLASH SCREEN -->
-    <div id="intro-screen" class="fixed inset-0 bg-slate-950 z-50 flex items-center justify-center transition-opacity duration-700">
+    <div id="intro-screen" class="fixed inset-0 bg-slate-950 z-50 flex items-center justify-center transition-opacity duration-700 hidden">
         <div class="text-center transform transition-transform duration-700 scale-100" id="intro-content">
             <span class="text-xs uppercase tracking-[0.3em] text-[#5865F2] font-bold block mb-2">Welcome</span>
             <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
@@ -123,19 +123,30 @@
         </div>
     </div>
 
-    <!-- DAS JS FÜR DEN EFFEKT (Ganz unten vor </body> einfügen) -->
+    <!-- DAS JS FÜR DEN EINMALIGEN EFFEKT -->
     <script>
         window.addEventListener('load', function() {
-            setTimeout(function() {
-                const intro = document.getElementById('intro-screen');
-                // Lässt das Intro weich verschwinden (Fade-Out)
-                intro.style.opacity = '0';
+            const intro = document.getElementById('intro-screen');
+            
+            // Prüfen, ob das Intro in dieser Sitzung schon gezeigt wurde
+            if (!sessionStorage.getItem('introShown')) {
+                // Einblenden, da es noch nicht gezeigt wurde
+                intro.classList.remove('hidden');
                 
-                // Entfernt es nach der Animation komplett aus dem Weg, damit man wieder klicken kann
+                // Nach 1.5 Sekunden ausblenden
                 setTimeout(function() {
-                    intro.style.display = 'none';
-                }, 700); // Wartet 0.7 Sekunden bis die Transparenz durch ist
-            }, 1000); // Bleibt genau 1.5 Sekunden lang sichtbar
+                    intro.style.opacity = '0';
+                    
+                    setTimeout(function() {
+                        intro.style.display = 'none';
+                        // Speichern, dass es jetzt gezeigt wurde
+                        sessionStorage.setItem('introShown', 'true');
+                    }, 700);
+                }, 1500);
+            } else {
+                // Wenn schon gezeigt, direkt komplett verstecken
+                intro.style.display = 'none';
+            }
         });
     </script>
 

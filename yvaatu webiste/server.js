@@ -47,9 +47,9 @@ app.get('/auth/discord/callback', async (req, res) => {
         const isMember = userGuilds.some(guild => guild.id === yvaatuServerId);
 
         if (isMember) {
-            res.redirect('/index.html?verified=true');
+            res.redirect('https://yvaatuwebsite.onrender.com/index.html?verified=true');
         } else {
-            res.redirect('/index.html?error=not_on_server');
+            res.redirect('https://yvaatuwebsite.onrender.com/index.html?error=not_on_server');
         }
 
     } catch (error) {
